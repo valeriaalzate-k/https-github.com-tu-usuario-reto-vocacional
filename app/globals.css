@@ -1,26 +1,93 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #eeebf6;
+  font-family: var(--font-instrument), system-ui, sans-serif;
+  color: #17141f;
+  -webkit-font-smoothing: antialiased;
 }
+
+a {
+  color: #6d3bf5;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #5729d6;
+}
+
+button {
+  font-family: inherit;
+}
+
+@keyframes rvup {
+  0% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.rv-fadeup {
+  animation: rvup 0.5s ease;
+}
+
+.rv-btn-primary,
+.rv-btn-secondary,
+.rv-option,
+.rv-continue,
+.rv-career-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease,
+    background 0.15s ease, color 0.15s ease;
+}
+
+.rv-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 40px -8px rgba(109, 59, 245, 0.5);
+}
+
+.rv-btn-secondary:hover {
+  transform: translateY(-3px);
+  border-color: #cfc7ec;
+}
+
+.rv-option:hover {
+  border-color: #c6bdeb;
+  background: #fbfaff;
+}
+
+.rv-continue:hover:not(:disabled) {
+  background: #5c2ee0;
+}
+
+.rv-block2-btn:hover {
+  background: #d9552d;
+}
+
+.rv-career-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px -18px rgba(30, 20, 60, 0.35);
+}
+
+.rv-link-muted {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.rv-link-muted:hover {
+  color: #17141f !important;
+}
+
