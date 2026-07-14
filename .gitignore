@@ -45,3 +45,11 @@ next-env.d.ts
 # sqlite database (datos reales de estudiantes, no debe subirse)
 *.db
 *.db-journal
+
+.vercel
+.env*
+
+# agent skill docs auto-installed by vercel/neon integration
+.agents/
+.claude/
+skills-lock.json
